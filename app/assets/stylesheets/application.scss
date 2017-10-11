@@ -1,0 +1,164 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+
+
+*, *:before, *:after {
+-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  background: #000;
+}
+
+
+.navbar {
+  font-size: 1.5rem;
+  
+    
+  a {
+     height: 100%;
+  }
+  
+    .navbar-brand {
+        height: 100%;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+  .navbar-nav {
+    .nav-item {
+      margin-right: 1rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .nav-item a {
+      color: #fff;
+      padding: 0.7rem;
+      &:hover {
+        color: rgba(0, 191, 255, 1);
+        text-decoration: none;
+      }
+      &:focus {
+        color: #f921f9;
+        text-decoration: none;
+      }
+    }
+  }
+    
+  .collapsing {
+    height: 100vh !important;
+    position: absolute;
+    top: 0;
+    left: -222px;
+    background: #fff;
+        -webkit-transition: left 0.3s ease;
+        -o-transition: left 0.3s ease;
+        -moz-transition: left 0.3s ease;
+        transition: left 0.3s ease;
+    
+    .menu-footer {
+        display: none;
+    }
+  }
+    
+  .collapse.show {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    width: 222px;
+    background: #fff;
+      -webkit-transition: left 0.3s ease;
+      -o-transition: left 0.3s ease;
+      -moz-transition: left 0.3s ease;
+      transition: left 0.3s ease;
+      
+      ul {
+          height: 100%;
+          li {
+              height: auto;
+              width: 206;
+          }
+      }
+
+    a {
+      color: #000;
+    }
+      .menu-footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+      }
+  }
+}
+
+
+@include media-breakpoint-up(xs) {
+  h1 {
+    font-size: 1.5rem;
+  }
+    
+  h2 {
+    font-size: 1.25rem;
+  }
+}
+
+//xs & sm
+@include media-breakpoint-down(sm) {
+  .navbar-brand img {
+        height: 40px;
+        width: auto;
+  }
+}
+
+//sm up
+@include media-breakpoint-up(sm) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+//md up
+@include media-breakpoint-up(md) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+//lg up
+@include media-breakpoint-up(lg) {
+  h1 {
+    font-size: 3.5rem;
+  }
+    
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
