@@ -1,5 +1,4 @@
-class Accounts::ConfirmationsController < Devise::ConfirmationsController
-
+class Users::ConfirmationsController < Devise::ConfirmationsController
   # GET /resource/confirmation/new
   # def new
   #   super
@@ -11,18 +10,10 @@ class Accounts::ConfirmationsController < Devise::ConfirmationsController
   # end
 
   # GET /resource/confirmation?confirmation_token=abcdef
-  def show
-    @account = resource_class.confirm_by_token(params[:confirmation_token])
-        if resource.errors.empty?
-          resource.save
-           if resource.save
-           end
-           set_flash_message(:notice, :confirmed) if is_navigational_format?
-        else
-          respond_with_navigational(resource.errors, :status => :unprocessable_entity) {render_with_scope :new }
-        end
-  end
-  
+  # def show
+  #   super
+  # end
+
   # protected
 
   # The path used after resending confirmation instructions.
@@ -34,6 +25,4 @@ class Accounts::ConfirmationsController < Devise::ConfirmationsController
   # def after_confirmation_path_for(resource_name, resource)
   #   super(resource_name, resource)
   # end
-  
-  
 end

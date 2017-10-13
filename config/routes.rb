@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :accounts, path: 'account', controllers: {
-    confirmations: 'accounts/confirmations',
-    registrations: 'accounts/registrations'
-  }
+
+  devise_for :accounts, controllers: { 
+      confirmations: 'accounts/confirmations'
+  }  
+  
+  devise_for :users, controllers: { 
+      registrations: 'users/registrations' 
+  }  
   
   get 'guest/index'
   

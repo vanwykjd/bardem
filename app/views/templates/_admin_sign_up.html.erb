@@ -1,0 +1,47 @@
+<div class="text-center">
+    <h2>Create Your Account</h2>
+</div>
+
+<div class="row justify-content-center devise-form">
+    <%= form_for new_user_registration_path do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="form-group">
+        <%= f.label :first_name %><br />
+        <%= f.text_field :first_name, class: 'form-control', placeholder: "First name", autofocus: true %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :last_name %><br />
+        <%= f.text_field :last_name, class: 'form-control', placeholder: "Last name", autofocus: true %>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label :role %><br />
+        <%= f.text_field :role, class: 'form-control', value: 'admin'  %>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label :company_name %><br />
+        <%= f.text_field :company_name, value: @account.company_name %>
+    </div>
+  
+    <div class="form-group">
+        <%= f.label :company_id %><br />
+        <%= f.text_field :company_id, value: @account.id %>
+    </div>
+  
+    <div class="form-group">
+        <%= f.label :email %><br />
+        <%= f.text_field :email, value: @account.email %>
+    </div>
+    
+    <div class="text-center">
+        <div class="actions">
+            <%= f.submit "Create Account", class: 'btn btn-primary' %>
+        </div>
+    </div>
+    
+    <% end %>
+</div>
+
